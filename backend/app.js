@@ -10,7 +10,7 @@ const userRoutes = require('./routes/user');
 const app = express();
 
 mongoose
-  .connect('mongodb+srv://max:KVIv43BJHgFbvYxo@cluster0-dy5nr.mongodb.net/demo-mean?retryWrites=true&w=majority', { useNewUrlParser: true })
+  .connect('mongodb+srv://max:' + process.env.MONGO_ATLAS_PW + '@cluster0-dy5nr.mongodb.net/demo-mean?retryWrites=true&w=majority', { useNewUrlParser: true })
   .then(() => {
     console.log('Connected to database');
 })
